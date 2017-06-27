@@ -1,4 +1,4 @@
-package main
+package api
 
 import (
 	"fmt"
@@ -58,7 +58,7 @@ func cleanse(s []string) []string {
 }
 
 // Run runs the API instance
-func main() {
+func init() {
 	rand.Seed(time.Now().UnixNano())
 
 	adjDict, err := Load("api/adj_dict.txt")
@@ -80,7 +80,7 @@ func main() {
 		fmt.Fprintln(w, generateName(adjDict, animalDict))
 	})
 
-	log.Fatal(http.ListenAndServe(":8080", router))
+	http.Handle("/", router)
 }
 
 func generateName(dict ...*Dictionary) string {
