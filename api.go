@@ -61,13 +61,13 @@ func cleanse(s []string) []string {
 func init() {
 	rand.Seed(time.Now().UnixNano())
 
-	adjDict, err := Load("api/adj_dict.txt")
+	adjDict, err := Load("adj_dict.txt")
 
 	if err != nil {
 		log.Fatal(err)
 	}
 
-	animalDict, err := Load("api/animal_dict.txt")
+	animalDict, err := Load("animal_dict.txt")
 
 	if err != nil {
 		log.Fatal(err)
