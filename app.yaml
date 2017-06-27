@@ -1,7 +1,6 @@
+application: cognitive-galago
 runtime: go
 api_version: go1
 handlers:
-- url: /random
-  script: _go_app
 - url: /.*
   script: _go_app
